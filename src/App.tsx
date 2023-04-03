@@ -1,14 +1,49 @@
-// <reference path="path/types.d.ts" />
-import FaSun from "./assests/images/FaSun.png";
 import "./App.css";
+import React, { useState } from "react";
+import RadioBtn from "./components/RadioBtn";
+
 
 const App = () => {
-  return (
-    <div>
-      <h3>react-typescript boilerplate!</h3>
-      <h5>testing lint stage!!</h5>
+  
+  const [value, setValue] = useState<string>("");
 
-      <img src={FaSun} alt="FaSun" />
+  const options = [
+    {
+      id: "1",
+      name: "tax-classification",
+      value: "Sole Proprietorship"
+    },
+    {
+      id: "2",
+      name: "tax-classification",
+      value: "Partnership"
+    },
+    {
+      id: "3",
+      name: "tax-classification",
+      value: "C Corporation"
+    },
+    {
+      id: "4",
+      name: "tax-classification",
+      value: "S Corporation"
+    },
+    {
+      id: "5",
+      name: "tax-classification",
+      value: "LLC"
+    }
+  ];
+
+  return (
+    <div className="app">
+      <h1>Business Federal Tax Classification</h1>
+      <p>The tax classification of the business</p>
+      <RadioBtn
+        options={options}
+        value={value}
+        setValue={setValue}
+        />
     </div>
   );
 };
