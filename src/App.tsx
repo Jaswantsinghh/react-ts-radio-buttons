@@ -11,34 +11,39 @@ const App = () => {
     {
       id: "1",
       name: "tax-classification",
-      value: "Sole Proprietorship"
+      value: "C Corporation"
     },
     {
       id: "2",
       name: "tax-classification",
-      value: "Partnership"
+      value: "S Corporation"
     },
     {
       id: "3",
       name: "tax-classification",
-      value: "C Corporation"
+      value: "Partnership"
     },
     {
       id: "4",
       name: "tax-classification",
-      value: "S Corporation"
+      value: "Trust"
     },
     {
       id: "5",
       name: "tax-classification",
-      value: "LLC"
-    }
+      value: "Disregarded Entity"
+    },
+    {
+      id: "6",
+      name: "tax-classification",
+      value: "Other"
+    },
   ];
 
   return (
     <div className="app">
       <h1>Business Federal Tax Classification</h1>
-      <p>The tax classification of the business</p>
+      <p>The tax classification of the business.</p>
       <RadioBtn
         options={options}
         value={value}
