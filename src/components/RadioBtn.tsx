@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import React, {useEffect, useRef} from 'react';
 import PropTypes from 'prop-types';
 
 type AppProps = {
@@ -37,7 +37,8 @@ const RadioBtn = ({ options, value, setValue }: AppProps) => {
                 } else {
                     handleChange(options[options.length - 1].value);
                 }
-                break;}
+                break;
+            }
             case 'ArrowDown':{
                 e.preventDefault();
                 const index2 = options.findIndex((item) => {return item.value === option});
@@ -52,14 +53,22 @@ const RadioBtn = ({ options, value, setValue }: AppProps) => {
         }
     };
 
+    useEffect(() => {
+        if (ref.current) {
+            const active = ref.current.querySelector('.radio-btn__option[aria-selected="true"]');
+            if (active) {
+                (active as HTMLElement).focus();
+            }
+        }
+    } ,[ref, value])
+
     return (
-    <div className="radio-btn">
+    <div className="radio-btn" ref={ref}>
         {options.map((option) => {return (
             <div 
                 role="tab" 
                 className='radio-btn__option' 
                 key={option.id}
-                ref={ref}
                 onClick={() => {return handleChange(option.value)}} 
                 onKeyDown={(e) => {return handleKeyDown(e, option.value)}} 
                 tabIndex={0}
