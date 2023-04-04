@@ -60,7 +60,7 @@ p {
     width: 18px;
     height: 18px;
     border-radius: 50%;
-    border: 1px solid black;
+    border: 2px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
