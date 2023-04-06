@@ -19,7 +19,7 @@ const RadioButton = ({ options, value, setValue }: AppProps) => {
         <div className="radio-btn">
             {options.map((option) => {return (
                 // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
-                <label htmlFor={option.id} className='radio-btn__option' key={option.id} onClick={() => {return handleChange(option.value)}} tabIndex={-1} onKeyDown={() => {return handleChange(option.value)}}>
+                <label htmlFor={option.id} className='radio-btn__option' key={option.id} onClick={() => {return handleChange(option.value)}} onKeyDown={() => {return handleChange(option.value)}}>
                     <input
                         key={option.id}
                         type="radio"
