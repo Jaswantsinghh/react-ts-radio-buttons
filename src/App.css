@@ -55,6 +55,10 @@ p {
     box-shadow: -1px -1px 2px rgba(222,225,229, 0.5) inset, 1px 1px 2px rgba(250,253,255, 0.3) inset, 12px 12px 30px rgba(222,225,229, 0.9), -12px -12px 24px rgba(250,253,255, 0.9), 12px -12px 24px rgba(222,225,229, 0.2), -12px 12px 24px rgba(222,225,229, 0.2);
 }
 
+.radio-btn__option:focus-within {
+    outline-color: black;
+}
+
 
 .radio-btn__outer-ring {
     width: 18px;
@@ -74,4 +78,41 @@ p {
     width: 8px;
     height: 8px;
     border-radius: 50%;
+}
+
+.radio-button {
+    width: 18px;
+    height: 18px;
+    background-color: #ECEFF4;
+}
+
+input[type="radio"] {
+    appearance: none;
+    background-color: #ECEFF4;
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 18px;
+    height: 18px;
+    border: 1.5px solid currentColor;
+    border-radius: 50%;
+}
+
+input[type="radio"] {
+    display: grid;
+    place-content: center;
+}
+
+input[type="radio"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em black;
+}
+
+input[type="radio"]:checked::before {
+    transform: scale(1);
 }

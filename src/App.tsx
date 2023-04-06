@@ -1,6 +1,6 @@
 import "./App.css";
 import React, { useState } from "react";
-import RadioBtn from "./components/RadioBtn";
+import RadioButton from "./components/RadioButton";
 
 
 const App = () => {
@@ -44,7 +44,7 @@ const App = () => {
     <div className="app">
       <h1>Business Federal Tax Classification</h1>
       <p>The tax classification of the business.</p>
-      <RadioBtn
+      <RadioButton
         options={options}
         value={value}
         setValue={setValue}
